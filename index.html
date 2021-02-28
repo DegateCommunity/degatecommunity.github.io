@@ -53,6 +53,12 @@
                 Documentation
             </v-btn>
 
+            <!-- Downloads -->
+            <v-btn large href="#downloads" style="margin-right: 5px">
+                <v-icon left>mdi-download</v-icon>
+                Downloads
+            </v-btn>
+
             <!-- Dark mode button -->
             <v-btn icon @click="darkMode" large>
                 <v-icon v-if="!$vuetify.theme.dark">mdi-moon-waxing-crescent</v-icon>
@@ -72,7 +78,7 @@
         <v-main>
 
             <!-- About Degate-->
-            <v-card style="margin-top: 10px; padding: 40px" tile>
+            <v-card style="margin-top: 10px; padding: 40px" tile id="about">
 
                 <!-- Title -->
                 <v-card-title class="justify-center">
@@ -146,7 +152,7 @@
             </v-card>
 
             <!-- Downloads -->
-            <div style="padding: 40px">
+            <div style="padding: 40px" id="downloads">
             <v-card width="100%" outlined elevation="3">
 
                 <!-- Title -->
@@ -234,7 +240,7 @@
             </div>
 
             <!-- Links -->
-            <v-card style="margin-top: 20px" tile color="lighten-1">
+            <v-card style="margin-top: 20px" tile color="lighten-1" id="more">
 
                 <!-- Title -->
                 <v-card-title class="justify-center">
