@@ -1,0 +1,218 @@
+{
+  "types": {
+    "online": {
+      "name": "Online Installer",
+      "info": "An installer without Degate in it, it will download Degate during the installation. It will install Degate, an updater and an uninstaller.",
+      "icon": "mdi-wifi"
+    },
+    "offline": {
+      "name": "Offline Installer",
+      "info": "An installer with all needed in it. It will install Degate, an updater and an uninstaller.",
+      "icon": "mdi-wifi-off"
+    },
+    "binaries": {
+      "name": "Binaries",
+      "info": "ZIP file containing Degate binaries directly without any modifications or additions.",
+      "icon": "mdi-folder-zip"
+    },
+    "appimage": {
+      "name": "Appimage",
+      "info": "AppImage is a format for distributing portable software on Linux.",
+      "icon": "mdi-zip-box"
+    },
+    "source_code": {
+      "name": "Source code",
+      "info": "The source code of the selected version.",
+      "icon": "mdi-source-branch"
+    },
+    "demo_projects": {
+      "name": "Demo projects",
+      "info": "A ZIP file with demo projects for Degate. See: https://github.com/DegateCommunity/DegateDemoProjects.",
+      "icon": "mdi-animation"
+    }
+  },
+  "platforms": {
+    "windows": {
+      "icon": "mdi-windows"
+    },
+    "linux": {
+      "icon": "mdi-linux"
+    },
+    "macos": {
+      "icon": "mdi-apple"
+    },
+    "other": {
+      "icon": "mdi-auto-fix"
+    }
+  },
+  "downloads": {
+    "release": {
+      "enabled": false,
+      "version": "2.0.0-beta.1",
+      "windows": [
+        {
+          "type": "online",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_online_installer_Windows_x64.zip",
+          "size": "10 MB"
+        },
+        {
+          "type": "offline",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_offline_installer_Windows_x64.zip",
+          "size": "37.4 MB"
+        },
+        {
+          "type": "binaries",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_binaries_Windows_x64.zip",
+          "size": "21.6 MB"
+        }
+      ],
+      "linux": [
+        {
+          "type": "online",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_online_installer_Linux_x64.zip",
+          "size": "11.5 MB"
+        },
+        {
+          "type": "offline",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_offline_installer_Linux_x64.zip",
+          "size": "45.4 MB"
+        },
+        {
+          "type": "binaries",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_binaries_Linux_x64.zip",
+          "size": "54.6 MB"
+        },
+        {
+          "type": "appimage",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_appimage_Linux_x64.zip",
+          "size": "54.5 MB"
+        }
+      ],
+      "macos": [
+        {
+          "type": "online",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_online_installer_Mac_x64.zip",
+          "size": "11 MB"
+        },
+        {
+          "type": "offline",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_offline_installer_Mac_x64.zip",
+          "size": "19.7 MB"
+        },
+        {
+          "type": "binaries",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_binaries_Mac_x64.zip",
+          "size": "28.4 MB"
+        }
+      ],
+      "other": [
+        {
+          "type": "source_code",
+          "configuration": "",
+          "url": "https://github.com/DegateCommunity/Degate/archive/v2.0.0-beta.1.zip",
+          "size": ""
+        },
+        {
+          "type": "demo_projects",
+          "configuration": "",
+          "url": "https://github.com/DegateCommunity/DegateDemoProjects/archive/master.zip",
+          "size": "211 MB"
+        }
+      ]
+    },
+    "nightly": {
+      "enabled": true,
+      "version": "2.0.0-beta.1",
+      "windows": [
+        {
+          "type": "online",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_online_installer_Windows_x64.zip",
+          "size": "10 MB"
+        },
+        {
+          "type": "offline",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_offline_installer_Windows_x64.zip",
+          "size": "37.4 MB"
+        },
+        {
+          "type": "binaries",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_binaries_Windows_x64.zip",
+          "size": "21.6 MB"
+        }
+      ],
+      "linux": [
+        {
+          "type": "online",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_online_installer_Linux_x64.zip",
+          "size": "11.5 MB"
+        },
+        {
+          "type": "offline",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_offline_installer_Linux_x64.zip",
+          "size": "45.4 MB"
+        },
+        {
+          "type": "binaries",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_binaries_Linux_x64.zip",
+          "size": "54.6 MB"
+        },
+        {
+          "type": "appimage",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_appimage_Linux_x64.zip",
+          "size": "54.5 MB"
+        }
+      ],
+      "macos": [
+        {
+          "type": "online",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_online_installer_Mac_x64.zip",
+          "size": "11 MB"
+        },
+        {
+          "type": "offline",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_offline_installer_Mac_x64.zip",
+          "size": "19.7 MB"
+        },
+        {
+          "type": "binaries",
+          "configuration": "x64",
+          "url": "https://github.com/DegateCommunity/Degate/releases/download/v2.0.0-beta.1/Degate_binaries_Mac_x64.zip",
+          "size": "28.4 MB"
+        }
+      ],
+      "other": [
+        {
+          "type": "source_code",
+          "configuration": "",
+          "url": "https://github.com/DegateCommunity/Degate/archive/v2.0.0-beta.1.zip",
+          "size": ""
+        },
+        {
+          "type": "demo_projects",
+          "configuration": "",
+          "url": "https://github.com/DegateCommunity/DegateDemoProjects/archive/master.zip",
+          "size": "211 MB"
+        }
+      ]
+    }
+  }
+}

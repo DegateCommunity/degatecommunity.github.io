@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- CDN -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.x/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Head -->
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="degate.png"/>
+</head>
+<body>
+
+<div id="app">
+    <v-app>
+
+        <!-- App bar -->
+        <v-app-bar app dense style="position: relative">
+
+            <!-- Logo -->
+            <v-img src="./degate.png" max-height="50" max-width="50"></v-img>
+
+            <!-- Toolbar title -->
+            <v-toolbar-title style="margin-left: 20px">Degate</v-toolbar-title>
+
+            <v-spacer></v-spacer>
+
+            <!-- Github -->
+            <v-btn large href="https://github.com/DegateCommunity/Degate" style="margin-right: 5px">
+                <v-icon left>fa-github</v-icon>
+                Github
+            </v-btn>
+
+            <!-- Bug tracker -->
+            <v-btn large href="https://github.com/DegateCommunity/Degate/issues" style="margin-right: 5px">
+                <v-icon left>fa-bug</v-icon>
+                Bug tracker
+            </v-btn>
+
+            <!-- Documentation -->
+            <v-btn large href="https://degate.readthedocs.io/en/latest/" style="margin-right: 5px">
+                <v-icon left>mdi-book</v-icon>
+                Documentation
+            </v-btn>
+
+            <!-- Dark mode button -->
+            <v-btn icon @click="darkMode" large>
+                <v-icon v-if="!$vuetify.theme.dark">mdi-moon-waxing-crescent</v-icon>
+                <v-icon v-if="$vuetify.theme.dark">mdi-white-balance-sunny</v-icon>
+            </v-btn>
+
+        </v-app-bar>
+
+        <!-- Carousel -->
+        <div style="margin-top: 0px">
+            <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover>
+                <v-carousel-item v-for="(item,i) in slides" :key="i" :src="item.src" reverse-transition="fade-transition" transition="fade-transition">
+                </v-carousel-item>
+            </v-carousel>
+        </div>
+
+        <v-main>
+
+            <!-- About Degate-->
+            <v-card style="margin-top: 10px; padding: 40px" tile>
+
+                <!-- Title -->
+                <v-card-title class="justify-center">
+                    About Degate
+                </v-card-title>
+
+                <!-- Text -->
+                <v-card-text style="padding-left: 20%; padding-right: 20%">
+                    <v-container fluid>
+                        <v-layout justify-center align-center>
+                            <v-flex shrink>
+                                <v-img src="./degate.png" width="200px"></v-img>
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+
+                    Degate is a multi-platform software for semi-automatic VLSI reverse engineering of digital logic in chips.
+                    The current main maintainer of Degate is Dorian Bachelot.
+
+                    <br/><br/>
+
+                    Degate was actively developed by Martin Schobert, during his thesis, from 2008 to 2011.
+                    For now, the project is inactive and only get some small fixes since 2011.
+                    The project is composed of a library (libGate) and a GUI interface (Degate).
+
+                    Degate has definitely a great potential, mainly because it is the only free and open-source software for hardware reverse engineering of chips,
+                    but never knew how to impose itself in the community.
+                    One possible reason for that is because Degate was known to be unstable and have impacting bugs in a first place.
+
+                    <br/><br/>
+
+                    This project aims to totally replace the old Degate, with a focus on Windows, Linux and MacOS support, getting better stability and general modernization.
+                    To achieve this the aim was to drop GTK and move to Qt and merge the lib and the GUI part of the project.
+                    Another objective was to minimize the number of dependencies, for now it uses only Boost and Qt and the mid-term objective is to only keep Qt and remove Boost.
+
+                    <br/><br/>
+
+                    The stability was the main problem of the old Degate and the main reason why the community hadn't already united around it.
+                    Regarding that, we want to have fewer bugs as possible, even if some functionality needs to be dropped (for the moment).
+
+                    <br/><br/>
+
+                    For the moment we have (as functionalities):
+                    <ul>
+                        <li>OpenGL 3 support (better performances and evolutive),</li>
+                        <li>Qt (bunch of tools, open-source and easy cross-platform),</li>
+                        <li>Multi-platform support (official support for Linux, Windows and MacOS),</li>
+                        <li>Multi-language support (for now only English and French are implemented),</li>
+                        <li>UTF-8 support for the workspace (the main area of the software, where you can work on high-definition chips images),</li>
+                        <li>Backward compatibility of old Degate project format,</li>
+                        <li>Project configuration (elements color, project name, size…),</li>
+                        <li>Layers configuration (type, position, background image…),</li>
+                        <li>Gate and gate configuration (gate template, gate instance, behavior with VHDL and Verilog support and debugging),</li>
+                        <li>Via and via configuration,</li>
+                        <li>EMarker (Electric Marker) and emarker configuration,</li>
+                        <li>Interconnection (electric connection between electric objects),</li>
+                        <li>Template matching (for gates),</li>
+                        <li>Grid,</li>
+                        <li>Via matching (can be tricky),</li>
+                        <li>Wire matching (need a rework),</li>
+                        <li>Sub-projects,</li>
+                        <li>Annotation and annotation configuration,</li>
+                        <li>Light and dark theme support,</li>
+                        <li>Rule checks,</li>
+                        <li>Modules,</li>
+                        <li>Connection inspector,</li>
+                        <li>And much more…</li>
+                    </ul>
+
+                </v-card-text>
+            </v-card>
+
+            <!-- Downloads -->
+            <div style="padding: 40px">
+            <v-card width="100%" outlined elevation="3">
+
+                <!-- Title -->
+                <v-card-title class="justify-center">
+                    Downloads
+                </v-card-title>
+
+                <!-- Release/Nightly tabs -->
+                <v-tabs fixed-tabs>
+
+                    <!-- Tabs titles -->
+                    <v-tab v-for="(download_cat, download_cat_key) in config['downloads']" :key="download_cat_key" v-if="download_cat['enabled']">
+                        {{ download_cat_key }}: {{ download_cat['version'] }}
+                    </v-tab>
+
+                    <!-- Items -->
+                    <v-tab-item v-for="(download_cat, download_cat_key) in config['downloads']" :key="download_cat_key" v-if="download_cat['enabled']">
+
+                        <!-- Platforms tabs -->
+                        <v-tabs fixed-tabs style="padding: 10px">
+
+                            <!-- Tabs titles -->
+                            <v-tab v-for="(platform, platform_key) in config['platforms']" :key="platform_key">
+                                <v-icon left>
+                                    {{ platform['icon'] }}
+                                </v-icon>
+                                {{ platform_key }}
+                            </v-tab>
+
+                            <!-- Items -->
+                            <v-tab-item v-for="(platform, platform_key) in config['platforms']" :key="platform_key">
+                                <v-container width="100%">
+                                    <v-row v-for="(download, download_key) in download_cat[platform_key]" :key="download_key" style="padding-top: 5px; padding-bottom: 5px">
+
+                                        <!-- Download -->
+                                        <v-card width="100%" style="padding: 10px" elevation="3">
+
+                                            <!-- Name -->
+                                            <v-icon left>
+                                                {{ config['types'][download['type']]['icon'] }}
+                                            </v-icon>
+                                            <b> {{ config['types'][download['type']]['name'] }} </b>
+
+                                            <!-- Block -->
+                                            <v-container width="100%">
+                                                <v-row>
+
+                                                    <!-- Info -->
+                                                    <v-col>
+                                                        {{ config['types'][download['type']]['info'] }}
+
+                                                        <br/> <br/>
+
+                                                        <div v-if="download['size'] !== ''">
+                                                            <b> Size: </b> <i> {{ download['size'] }} </i>
+                                                        </div>
+
+                                                        <div v-if="download['configuration'] !== ''">
+                                                            <b> Configuration: </b> <i> {{ download['configuration'] }} </i>
+                                                        </div>
+                                                    </v-col>
+
+                                                    <!-- Download button -->
+                                                    <v-col>
+                                                        <v-btn class="button" width="100%" height="70" tile v-bind:href="download['url']">
+                                                            <v-icon left>
+                                                                mdi-download
+                                                            </v-icon>
+                                                            Download
+                                                        </v-btn>
+                                                    </v-col>
+
+                                                </v-row>
+                                            </v-container>
+                                        </v-card>
+
+                                    </v-row>
+                                </v-container>
+                            </v-tab-item>
+                        </v-tabs>
+
+                    </v-tab-item>
+                </v-tabs>
+            </v-card>
+            </div>
+
+            <!-- Links -->
+            <v-card style="margin-top: 20px" tile color="lighten-1">
+
+                <!-- Title -->
+                <v-card-title class="justify-center">
+                    More
+                </v-card-title>
+
+
+                <!-- Text -->
+                <v-card-text style="padding-left: 20%; padding-right: 20%">
+
+                    <!-- Github -->
+                    <v-btn large href="https://github.com/DegateCommunity/Degate" style="margin-right: 5px">
+                        <v-icon left>fa-github</v-icon>
+                        Github
+                    </v-btn>
+
+                    <!-- Bug tracker -->
+                    <v-btn large href="https://github.com/DegateCommunity/Degate/issues" style="margin-right: 5px">
+                        <v-icon left>fa-bug</v-icon>
+                        Bug tracker
+                    </v-btn>
+
+                    <!-- Gitter -->
+                    <v-btn large href="https://gitter.im/DegateCommunity/Degate" style="margin-right: 5px">
+                        <v-icon left>mdi-chat</v-icon>
+                        Chat with us !
+                    </v-btn>
+
+                    <!-- Documentation -->
+                    <v-btn large href="https://degate.readthedocs.io/en/latest/" style="margin-right: 5px">
+                        <v-icon left>mdi-book</v-icon>
+                        Documentation
+                    </v-btn>
+
+                    <!-- Demo projects -->
+                    <v-btn large href="https://github.com/DegateCommunity/DegateDemoProjectse" style="margin-right: 5px">
+                        <v-icon left>mdi-layers</v-icon>
+                        Demo projects
+                    </v-btn>
+
+                    <!-- Website sources -->
+                    <v-btn large href="https://github.com/DegateCommunity/degatecommunity.github.io" style="margin-right: 5px">
+                        <v-icon left>mdi-web</v-icon>
+                        Website sources
+                    </v-btn>
+                </v-card-text>
+            </v-card>
+
+        </v-main>
+
+        <!-- Footer -->
+        <v-footer absolute app padless style="margin-top: 20px" width="100%">
+            <v-card flat tile width="100%" class="white--text text-center">
+                <v-card-text style="font-size: x-small">
+                    This website was made by <a href="https://github.com/DorianBDev">Dorian Bachelot</a> and <a href="https://github.com/Atlanta53">Korantin Bordeau--Aubert</a>.
+                    Degate is under MIT license.
+                </v-card-text>
+            </v-card>
+        </v-footer>
+
+        <!-- Gitter button -->
+        <script>
+            ((window.gitter = {}).chat = {}).options = {
+                room: 'DegateCommunity/Degate'
+            };
+        </script>
+        <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    </v-app>
+</div>
+
+<!-- Main script -->
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
