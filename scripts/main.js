@@ -16,6 +16,11 @@ let app = new Vue({
 
         // Parse JSON
         this.config = JSON.parse(request.responseText);
+
+        // Gitter button
+        ((window.gitter = {}).chat = {}).options = {
+            room: 'DegateCommunity/Degate'
+        };
     },
     data: {
         config: "",

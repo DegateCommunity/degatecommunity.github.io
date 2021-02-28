@@ -4,6 +4,7 @@
 <!-- CDN -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
@@ -238,43 +239,52 @@
 
 
                 <!-- Text -->
-                <v-card-text style="padding-left: 20%; padding-right: 20%">
+                <v-card-text>
 
-                    <!-- Github -->
-                    <v-btn large href="https://github.com/DegateCommunity/Degate" style="margin-right: 5px">
-                        <v-icon left>fa-github</v-icon>
-                        Github
-                    </v-btn>
+                    <v-container fluid>
+                        <v-layout justify-center align-center>
+                            <v-flex shrink>
 
-                    <!-- Bug tracker -->
-                    <v-btn large href="https://github.com/DegateCommunity/Degate/issues" style="margin-right: 5px">
-                        <v-icon left>fa-bug</v-icon>
-                        Bug tracker
-                    </v-btn>
+                                <!-- Github -->
+                                <v-btn large href="https://github.com/DegateCommunity/Degate" style="margin-right: 5px">
+                                    <v-icon left>fa-github</v-icon>
+                                    Github
+                                </v-btn>
 
-                    <!-- Gitter -->
-                    <v-btn large href="https://gitter.im/DegateCommunity/Degate" style="margin-right: 5px">
-                        <v-icon left>mdi-chat</v-icon>
-                        Chat with us !
-                    </v-btn>
+                                <!-- Bug tracker -->
+                                <v-btn large href="https://github.com/DegateCommunity/Degate/issues" style="margin-right: 5px">
+                                    <v-icon left>fa-bug</v-icon>
+                                    Bug tracker
+                                </v-btn>
 
-                    <!-- Documentation -->
-                    <v-btn large href="https://degate.readthedocs.io/en/latest/" style="margin-right: 5px">
-                        <v-icon left>mdi-book</v-icon>
-                        Documentation
-                    </v-btn>
+                                <!-- Gitter -->
+                                <v-btn large href="https://gitter.im/DegateCommunity/Degate" style="margin-right: 5px">
+                                    <v-icon left>mdi-chat</v-icon>
+                                    Chat with us !
+                                </v-btn>
 
-                    <!-- Demo projects -->
-                    <v-btn large href="https://github.com/DegateCommunity/DegateDemoProjectse" style="margin-right: 5px">
-                        <v-icon left>mdi-layers</v-icon>
-                        Demo projects
-                    </v-btn>
+                                <!-- Documentation -->
+                                <v-btn large href="https://degate.readthedocs.io/en/latest/" style="margin-right: 5px">
+                                    <v-icon left>mdi-book</v-icon>
+                                    Documentation
+                                </v-btn>
 
-                    <!-- Website sources -->
-                    <v-btn large href="https://github.com/DegateCommunity/degatecommunity.github.io" style="margin-right: 5px">
-                        <v-icon left>mdi-web</v-icon>
-                        Website sources
-                    </v-btn>
+                                <!-- Demo projects -->
+                                <v-btn large href="https://github.com/DegateCommunity/DegateDemoProjectse" style="margin-right: 5px">
+                                    <v-icon left>mdi-layers</v-icon>
+                                    Demo projects
+                                </v-btn>
+
+                                <!-- Website sources -->
+                                <v-btn large href="https://github.com/DegateCommunity/degatecommunity.github.io" style="margin-right: 5px">
+                                    <v-icon left>mdi-web</v-icon>
+                                    Website sources
+                                </v-btn>
+
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+
                 </v-card-text>
             </v-card>
 
@@ -289,14 +299,6 @@
                 </v-card-text>
             </v-card>
         </v-footer>
-
-        <!-- Gitter button -->
-        <script>
-            ((window.gitter = {}).chat = {}).options = {
-                room: 'DegateCommunity/Degate'
-            };
-        </script>
-        <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
     </v-app>
 </div>
 
