@@ -24,6 +24,7 @@ let app = new Vue({
     },
     data: {
         config: "",
+        dialog: false,
         slides: [
             {
                 src: './res/screenshots/1.png',
@@ -33,10 +34,7 @@ let app = new Vue({
             },
             {
                 src: './res/screenshots/3.png',
-            },
-            {
-                src: './res/screenshots/4.png',
-            },
+            }
         ],
     },
 })

@@ -36,31 +36,31 @@
             <v-spacer></v-spacer>
 
             <!-- Github -->
-            <v-btn large href="https://github.com/DegateCommunity/Degate" style="margin-right: 5px">
+            <v-btn plain large href="https://github.com/DegateCommunity/Degate" style="margin-right: 5px">
                 <v-icon left>fa-github</v-icon>
                 Github
             </v-btn>
 
             <!-- Bug tracker -->
-            <v-btn large href="https://github.com/DegateCommunity/Degate/issues" style="margin-right: 5px">
+            <v-btn plain large href="https://github.com/DegateCommunity/Degate/issues" style="margin-right: 5px">
                 <v-icon left>fa-bug</v-icon>
                 Bug tracker
             </v-btn>
 
             <!-- Documentation -->
-            <v-btn large href="https://degate.readthedocs.io/en/latest/" style="margin-right: 5px">
+            <v-btn plain large href="https://degate.readthedocs.io/en/latest/" style="margin-right: 5px">
                 <v-icon left>mdi-book</v-icon>
                 Documentation
             </v-btn>
 
             <!-- Downloads -->
-            <v-btn large href="#downloads" style="margin-right: 5px">
+            <v-btn plain large href="#downloads" style="margin-right: 5px">
                 <v-icon left>mdi-download</v-icon>
                 Downloads
             </v-btn>
 
             <!-- Dark mode button -->
-            <v-btn icon @click="darkMode" large>
+            <v-btn plain icon @click="darkMode" large>
                 <v-icon v-if="!$vuetify.theme.dark">mdi-moon-waxing-crescent</v-icon>
                 <v-icon v-if="$vuetify.theme.dark">mdi-white-balance-sunny</v-icon>
             </v-btn>
@@ -158,6 +158,50 @@
                 <!-- Title -->
                 <v-card-title class="justify-center">
                     Downloads
+
+                    <!-- Help button -->
+                    <v-dialog v-model="dialog" width="500">
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-btn text icon v-bind="attrs" v-on="on" style="margin: 2px">
+                                <v-icon>
+                                    mdi-comment-question
+                                </v-icon>
+                            </v-btn>
+                        </template>
+
+                        <!-- Help dialog -->
+                        <v-card>
+
+                            <!-- Dialog title -->
+                            <v-card-title class="headline lighten-2">
+                                About downloads
+                            </v-card-title>
+
+                            <!-- Dialog text -->
+                            <v-card-text>
+                                Every download on this page is directly from Github (you can see it when hovering a download button).
+                                This website is just a convenient way to get them, but in fact it's the same as downloading them directly
+                                from the <a href="https://github.com/DegateCommunity/Degate/releases">Github releases page</a>.
+
+                                <br><br>
+
+                                Each download is created via Github actions, the task is automatic and performed by Github servers.
+                                The sources used to create these downloads are those available on Github.
+                                Therefore, there is no human intervention when creating them, this prevents any kind of security issue.
+                            </v-card-text>
+
+                            <v-divider></v-divider>
+
+                            <!-- Dialog close button -->
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn color="primary" text @click="dialog = false">
+                                    Close
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+
                 </v-card-title>
 
                 <!-- Release/Nightly tabs -->
@@ -185,10 +229,11 @@
                             <!-- Items -->
                             <v-tab-item v-for="(platform, platform_key) in config['platforms']" :key="platform_key">
                                 <v-container width="100%">
+                                    <v-card width="100%" style="padding: 30px" elevation="5">
                                     <v-row v-for="(download, download_key) in download_cat[platform_key]" :key="download_key" style="padding-top: 5px; padding-bottom: 5px">
 
                                         <!-- Download -->
-                                        <v-card width="100%" style="padding: 10px" elevation="3">
+                                        <v-card outlined width="100%" style="padding: 10px" elevation="0">
 
                                             <!-- Name -->
                                             <v-icon left>
@@ -206,11 +251,11 @@
 
                                                         <br/> <br/>
 
-                                                        <div v-if="download['size'] !== ''">
+                                                        <div v-if="download['size'] !== ''" class="grey--text">
                                                             <b> Size: </b> <i> {{ download['size'] }} </i>
                                                         </div>
 
-                                                        <div v-if="download['configuration'] !== ''">
+                                                        <div v-if="download['configuration'] !== ''" class="grey--text">
                                                             <b> Configuration: </b> <i> {{ download['configuration'] }} </i>
                                                         </div>
                                                     </v-col>
@@ -230,6 +275,7 @@
                                         </v-card>
 
                                     </v-row>
+                                    </v-card>
                                 </v-container>
                             </v-tab-item>
                         </v-tabs>
@@ -240,13 +286,7 @@
             </div>
 
             <!-- Links -->
-            <v-card style="margin-top: 20px" tile color="lighten-1" id="more">
-
-                <!-- Title -->
-                <v-card-title class="justify-center">
-                    More
-                </v-card-title>
-
+            <v-card style="margin-top: 5px" tile color="lighten-1" id="more">
 
                 <!-- Text -->
                 <v-card-text>
@@ -256,37 +296,37 @@
                             <v-flex shrink>
 
                                 <!-- Github -->
-                                <v-btn large href="https://github.com/DegateCommunity/Degate" style="margin-right: 5px">
+                                <v-btn text large href="https://github.com/DegateCommunity/Degate" style="margin-right: 5px">
                                     <v-icon left>fa-github</v-icon>
                                     Github
                                 </v-btn>
 
                                 <!-- Bug tracker -->
-                                <v-btn large href="https://github.com/DegateCommunity/Degate/issues" style="margin-right: 5px">
+                                <v-btn text large href="https://github.com/DegateCommunity/Degate/issues" style="margin-right: 5px">
                                     <v-icon left>fa-bug</v-icon>
                                     Bug tracker
                                 </v-btn>
 
                                 <!-- Gitter -->
-                                <v-btn large href="https://gitter.im/DegateCommunity/Degate" style="margin-right: 5px">
+                                <v-btn text large href="https://gitter.im/DegateCommunity/Degate" style="margin-right: 5px">
                                     <v-icon left>mdi-chat</v-icon>
                                     Chat with us !
                                 </v-btn>
 
                                 <!-- Documentation -->
-                                <v-btn large href="https://degate.readthedocs.io/en/latest/" style="margin-right: 5px">
+                                <v-btn text large href="https://degate.readthedocs.io/en/latest/" style="margin-right: 5px">
                                     <v-icon left>mdi-book</v-icon>
                                     Documentation
                                 </v-btn>
 
                                 <!-- Demo projects -->
-                                <v-btn large href="https://github.com/DegateCommunity/DegateDemoProjectse" style="margin-right: 5px">
+                                <v-btn text large href="https://github.com/DegateCommunity/DegateDemoProjectse" style="margin-right: 5px">
                                     <v-icon left>mdi-layers</v-icon>
                                     Demo projects
                                 </v-btn>
 
                                 <!-- Website sources -->
-                                <v-btn large href="https://github.com/DegateCommunity/degatecommunity.github.io" style="margin-right: 5px">
+                                <v-btn text large href="https://github.com/DegateCommunity/degatecommunity.github.io" style="margin-right: 5px">
                                     <v-icon left>mdi-web</v-icon>
                                     Website sources
                                 </v-btn>
@@ -301,11 +341,11 @@
         </v-main>
 
         <!-- Footer -->
-        <v-footer absolute app padless style="margin-top: 20px" width="100%">
+        <v-footer absolute app padless style="margin-top: 5px" width="100%">
             <v-card flat tile width="100%" class="white--text text-center">
                 <v-card-text style="font-size: x-small">
                     This website was made by <a href="https://github.com/DorianBDev">Dorian Bachelot</a> and <a href="https://github.com/Atlanta53">Korantin Bordeau--Aubert</a>.
-                    Degate is under MIT license.
+                    Degate is under GNU General Public License v3.0 license.
                 </v-card-text>
             </v-card>
         </v-footer>
